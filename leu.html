@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Labor Market Research</title>
+    <link rel="stylesheet" href="leu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">State Labor Statistics (2010-2019)</h1>
+        
+        <div id="loading" class="loading-indicator">Loading data...</div>
+
+        <div class="control-section">
+            <h2>Select Age Group:</h2>
+            <div class="age-buttons">
+                <button data-age="16-19" class="age-btn active">Ages 16-19</button>
+                <button data-age="20-24" class="age-btn">Ages 20-24</button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h2>Select States to Compare:</h2>
+            <div id="state-buttons" class="state-buttons"></div>
+        </div>
+
+        <div id="data-container" class="data-grid"></div>
+    </div>
+    <script src="leu.js"></script>
+</body>
+</html>

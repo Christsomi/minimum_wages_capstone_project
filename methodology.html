@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Wage Effects Research</title>
+    <link rel="stylesheet" href="methodology.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Minimum Wage Effects on Youth Employment and Education</h1>
+            <p class="subtitle">A Comprehensive Analysis of State-Level Policies (2010-2019)</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="traditional">Traditional DiD</button>
+            <button class="tab-btn" data-tab="staggered">Staggered DiD</button>
+            <button class="tab-btn" data-tab="synthetic">Synthetic Control</button>
+            <button class="tab-btn" data-tab="event">Event Study</button>
+            <button class="tab-btn" data-tab="triple">Triple Difference</button>
+            <button class="tab-btn" data-tab="rd">RD with DiD</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-pane active">
+                <div class="card">
+                    <h2>Research Overview</h2>
+                    <div class="grid-2">
+                        <div>
+                            <h3>Research Variables</h3>
+                            <ul class="list-main">
+                                <li>Educational Outcomes
+                                    <ul class="list-sub">
+                                        <li>High school dropout rates (16-19 years)</li>
+                                        <li>High school attendance & enrollment</li>
+                                        <li>College enrollment (18-24 years)</li>
+                                        <li>Graduation rates (16-24 years)</li>
+                                    </ul>
+                                </li>
+                                <li>Employment Indicators
+                                    <ul class="list-sub">
+                                        <li>Beginning of Quarter Employment</li>
+                                        <li>Labor Force Participation Rate</li>
+                                        <li>Employment/Population Ratio</li>
+                                        <li>Unemployment rate</li>
+                                    </ul>
+                                </li>
+                                <li>Labor Market Dynamics
+                                    <ul class="list-sub">
+                                        <li>Job Creation and Destruction</li>
+                                        <li>Turnover rates</li>
+                                        <li>Average Monthly Earnings</li>
+                                        <li>Full Quarter Employment</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Research Design</h3>
+                            <p>This study employs six complementary econometric approaches:</p>
+                            <ul class="list-main">
+                                <li>Traditional Two-Period DiD for baseline estimates</li>
+                                <li>Staggered DiD for multiple policy changes</li>
+                                <li>Synthetic Control for counterfactual construction</li>
+                                <li>Event Study for dynamic effects analysis</li>
+                                <li>Triple Difference for additional robustness</li>
+                                <li>RD with DiD for boundary analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Traditional DiD Tab -->
+            <section id="traditional" class="tab-pane">
+                <div class="card">
+                    <h2>Traditional Two-Period Difference-in-Differences</h2>
+                    <p class="subtitle">Following Card and Krueger (1994) methodology</p>
+
+                    <p>The traditional difference-in-differences method compares changes in outcomes between treated and control states before and after minimum wage policy changes. This approach helps isolate the causal effect of minimum wage increases by controlling for both time-invariant differences between states and common time trends. By comparing the difference in outcomes between treatment and control groups over time, we can identify the impact of minimum wage policies while accounting for underlying trends and fixed characteristics of each state.</p>
+
+                    <div class="methodology-section">
+                        <h3>Model Specification</h3>
+                        <div class="equation">
+                            Y_ist = α + βTreat_s × Post_t + γ_s + δ_t + X_ist'θ + ε_ist
+                        </div>
+                        <p>Where:</p>
+                        <ul class="list-main">
+                            <li>Y_ist: Outcome variable for individual i in state s at time t</li>
+                            <li>Treat_s: Treatment indicator for state s</li>
+                            <li>Post_t: Post-treatment period indicator</li>
+                            <li>γ_s: State fixed effects</li>
+                            <li>δ_t: Time fixed effects</li>
+                            <li>X_ist: Vector of control variables</li>
+                        </ul>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Identification Assumptions</h3>
+                        <ul class="list-main">
+                            <li>Parallel Trends
+                                <ul class="list-sub">
+                                    <li>Treatment and control states would follow parallel paths absent intervention</li>
+                                    <li>Verified through pre-treatment trend analysis</li>
+                                </ul>
+                            </li>
+                            <li>No Spillovers
+                                <ul class="list-sub">
+                                    <li>Minimum wage changes in treated states do not affect control states</li>
+                                    <li>Tested through border county analysis</li>
+                                </ul>
+                            </li>
+                            <li>No Anticipation Effects
+                                <ul class="list-sub">
+                                    <li>Economic actors do not adjust behavior before implementation</li>
+                                    <li>Examined through announcement effect analysis</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Implementation Strategy</h3>
+                        <div class="grid-2">
+                            <div>
+                                <h4>Treatment Definition</h4>
+                                <ul class="list-main">
+                                    <li>Primary: State minimum wage above federal level</li>
+                                    <li>Intensity: Size of wage increase</li>
+                                    <li>Timing: Precise implementation dates</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Control Variables</h4>
+                                <ul class="list-main">
+                                    <li>State-level unemployment rates</li>
+                                    <li>GDP growth</li>
+                                    <li>Demographic composition</li>
+                                    <li>Industry mix</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staggered DiD Tab -->
+            <section id="staggered" class="tab-pane">
+                <div class="card">
+                    <h2>Staggered Difference-in-Differences</h2>
+                    <p class="subtitle">Based on Callaway and Sant'Anna (2021)</p>
+
+                    <p>The staggered difference-in-differences approach extends the traditional DiD method to handle multiple treatment periods and varying treatment timing across states. This method is particularly valuable for our analysis as different states implemented minimum wage changes at different times. It accounts for the dynamic nature of policy adoption and helps avoid bias that can arise when earlier treated units are used as controls for later treated units. The method provides a more nuanced understanding of treatment effects by explicitly modeling the timing of policy changes.</p>
+
+                    <div class="methodology-section">
+                        <h3>Extended Model</h3>
+                        <div class="equation">
+                            Y_ist = α + Σ_τ β_τ D_s(t-τ) + γ_s + δ_t + X_ist'θ + ε_ist
+                        </div>
+                        <p>Where D_s(t-τ) indicates treatment status τ periods from initial treatment.</p>
+                        <div class="equation-explanation">
+                            <h4>Term Explanations:</h4>
+                            <ul class="list-main">
+                                <li><strong>Σ_τ</strong>: Summation over all time periods relative to treatment</li>
+                                <li><strong>β_τ</strong>: Treatment effect τ periods away from initial treatment</li>
+                                <li><strong>D_s(t-τ)</strong>: Indicator for being τ periods away from treatment in state s</li>
+                                <li><strong>γ_s</strong>: State fixed effects</li>
+                                <li><strong>δ_t</strong>: Time fixed effects</li>
+                                <li><strong>X_ist'θ</strong>: Control variables and their coefficients</li>
+                                <li><strong>ε_ist</strong>: Error term</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Implementation Timeline</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Early Adopters (2010-2013)</h4>
+                                <ul class="list-main">
+                                    <li>Initial minimum wage increases</li>
+                                    <li>Baseline impact assessment</li>
+                                    <li>Long-term effect tracking</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Mid-Period Changes (2014-2016)</h4>
+                                <ul class="list-main">
+                                    <li>Policy diffusion patterns</li>
+                                    <li>Regional spillover effects</li>
+                                    <li>Intermediate-term adjustments</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Late Adopters (2017-2019)</h4>
+                                <ul class="list-main">
+                                    <li>Policy learning effects</li>
+                                    <li>Cross-state comparisons</li>
+                                    <li>Short-term impact analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Synthetic Control Tab -->
+            <section id="synthetic" class="tab-pane">
+                <div class="card">
+                    <h2>Synthetic Control Method</h2>
+                    <p class="subtitle">Following Abadie et al. (2010)</p>
+
+                    <p>The synthetic control method creates a data-driven comparison unit by combining multiple control states to match the pre-treatment characteristics of the treated state as closely as possible. This approach provides a more rigorous counterfactual by constructing a synthetic version of the treated state using weighted combinations of control states. The method is particularly useful when no single untreated state serves as an ideal comparison, allowing us to create a more credible control group for evaluating the impact of minimum wage policies.</p>
+
+                    <div class="methodology-section">
+                        <h3>Model Framework</h3>
+                        <div class="equation">
+                            Y_1t = δt + θtZ_1 + λtμ_1 + ε_1t
+                        </div>
+                        <div class="equation-explanation">
+                            <h4>Term Explanations:</h4>
+                            <ul class="list-main">
+                                <li><strong>Y_1t</strong>: Outcome for treated unit at time t</li>
+                                <li><strong>δt</strong>: Unknown common factor</li>
+                                <li><strong>θt</strong>: Vector of unknown parameters</li>
+                                <li><strong>Z_1</strong>: Vector of observed covariates</li>
+                                <li><strong>λt</strong>: Unknown common factor loadings</li>
+                                <li><strong>μ_1</strong>: Vector of unobserved unit characteristics</li>
+                                <li><strong>ε_1t</strong>: Error term</li>
+                            </ul>
+                        </div>
+                        <div class="equation">
+                            W* = argmin (X_1 - X_0W)'V(X_1 - X_0W)
+                        </div>
+                        <div class="equation-explanation">
+                            <h4>Term Explanations:</h4>
+                            <ul class="list-main">
+                                <li><strong>W*</strong>: Optimal weights for synthetic control</li>
+                                <li><strong>X_1</strong>: Vector of pre-intervention characteristics for treated unit</li>
+                                <li><strong>X_0</strong>: Matrix of pre-intervention characteristics for control units</li>
+                                <li><strong>V</strong>: Symmetric and positive semidefinite matrix</li>
+                                <li><strong>W</strong>: Vector of weights</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Donor Pool Construction</h3>
+                        <div class="grid-2">
+                            <div>
+                                <h4>Selection Criteria</h4>
+                                <ul class="list-main">
+                                    <li>Federal minimum wage adherence</li>
+                                    <li>Stable policy environment</li>
+                                    <li>Complete data availability</li>
+                                    <li>No major economic shocks</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Matching Variables</h4>
+                                <ul class="list-main">
+                                    <li>Pre-treatment employment trends</li>
+                                    <li>Economic indicators</li>
+                                    <li>Demographic composition</li>
+                                    <li>Industry structure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Event Study Tab -->
+            <section id="event" class="tab-pane">
+                <div class="card">
+                    <h2>Event Study Design</h2>
+                    <p class="subtitle">Based on Sun and Abraham (2021)</p>
+
+                    <p>The event study design examines the dynamic effects of minimum wage changes by tracking outcomes before and after policy implementation. This approach allows us to identify both anticipatory effects and the evolution of policy impacts over time. By estimating treatment effects for multiple periods before and after the policy change, we can assess whether the impact of minimum wage increases varies over time and whether there are any pre-existing trends that might confound our analysis.</p>
+
+                    <div class="methodology-section">
+                        <h3>Dynamic Effects Model</h3>
+                        <div class="equation">
+                            Y_ist = α + Σ_k β_k D_ist^k + γ_i + δ_t + X_ist'θ + ε_ist
+                        </div>
+                        <p>Where D_ist^k represents indicators for k periods relative to treatment.</p>
+                        <div class="equation-explanation">
+                            <h4>Term Explanations:</h4>
+                            <ul class="list-main">
+                                <li><strong>Σ_k</strong>: Sum over all periods relative to event</li>
+                                <li><strong>β_k</strong>: Effect k periods relative to event</li>
+                                <li><strong>D_ist^k</strong>: Indicator for being k periods away from event</li>
+                                <li><strong>γ_i</strong>: Individual fixed effects</li>
+                                <li><strong>δ_t</strong>: Time fixed effects</li>
+                                <li><strong>X_ist'θ</strong>: Controls and their coefficients</li>
+                                <li><strong>ε_ist</strong>: Error term</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Implementation Framework</h3>
+                        <ul class="list-main">
+                            <li>Event Window: 24 months pre/post treatment</li>
+                            <li>Multiple Events: Stacked regression approach</li>
+                            <li>Heterogeneity Analysis: By wage increase size</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Triple Difference Tab -->
+            <section id="triple" class="tab-pane">
+                <div class="card">
+                    <h2>Triple Difference (DDD)</h2>
+                    <p class="subtitle">Following Derenoncourt and Montialoux (2021)</p>
+
+                    <p>The triple difference method adds an additional layer of comparison to the traditional DiD approach by incorporating a third dimension of variation, typically across different groups within treated and control states. In our analysis, we compare outcomes across age groups, education levels, and industry exposure. This method helps control for state-specific shocks that might affect all groups similarly and group-specific trends that might affect all states similarly, providing a more robust identification of the minimum wage effects on our target populations.</p>
+
+                    <div class="methodology-section">
+                        <h3>Model Specification</h3>
+                        <div class="equation">
+                            Y_isgt = α + βTreat_s × Post_t × Group_g + γ_st + δ_gt + η_sg + X_isgt'θ + ε_isgt
+                        </div>
+                        <div class="equation-explanation">
+                            <h4>Term Explanations:</h4>
+                            <ul class="list-main">
+                                <li><strong>Y_isgt</strong>: Outcome for individual i in state s, group g, at time t</li>
+                                <li><strong>β</strong>: Triple-difference coefficient</li>
+                                <li><strong>Treat_s</strong>: Treatment state indicator</li>
+                                <li><strong>Post_t</strong>: Post-period indicator</li>
+                                <li><strong>Group_g</strong>: Group indicator (e.g., age group)</li>
+                                <li><strong>γ_st</strong>: State-by-time fixed effects</li>
+                                <li><strong>δ_gt</strong>: Group-by-time fixed effects</li>
+                                <li><strong>η_sg</strong>: State-by-group fixed effects</li>
+                                <li><strong>X_isgt'θ</strong>: Controls and their coefficients</li>
+                                <li><strong>ε_isgt</strong>: Error term</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Additional Dimension</h3>
+                        <ul class="list-main">
+                            <li>Age groups (16-19 vs. 25-64)</li>
+                            <li>Education levels (HS vs. College)</li>
+                            <li>Industry exposure</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RD with DiD Tab -->
+            <section id="rd" class="tab-pane">
+                <div class="card">
+                    <h2>Regression Discontinuity with DiD</h2>
+                    <p class="subtitle">Based on Dell (2010)</p>
+
+                    <p>The regression discontinuity with difference-in-differences approach combines the strengths of both methods to analyze minimum wage effects at policy thresholds. This method is particularly useful for examining effects at state borders where minimum wage policies change discontinuously. By comparing outcomes just above and below policy thresholds before and after implementation, we can identify local treatment effects while controlling for both spatial and temporal confounders. This approach is especially valuable for isolating the causal impact of minimum wage policies in geographic boundary regions.</p>
+
+                    <div class="methodology-section">
+                        <h3>Combined Approach</h3>
+                        <div class="equation">
+                            Y_ist = α + τ(D_s × Post_t) + β_1(X - c) + β_2(X - c)D_s + γ_s + δ_t + ε_ist
+                        </div>
+                        <div class="equation-explanation">
+                            <h4>Term Explanations:</h4>
+                            <ul class="list-main">
+                                <li><strong>τ</strong>: Treatment effect at the discontinuity</li>
+                                <li><strong>D_s</strong>: Treatment indicator</li>
+                                <li><strong>X</strong>: Running variable</li>
+                                <li><strong>c</strong>: Cutoff value</li>
+                                <li><strong>β_1</strong>: Slope coefficient for control group</li>
+                                <li><strong>β_2</strong>: Differential slope for treatment group</li>
+                                <li><strong>γ_s</strong>: State fixed effects</li>
+                                <li><strong>δ_t</strong>: Time fixed effects</li>
+                                <li><strong>ε_ist</strong>: Error term</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Implementation Details</h3>
+                        <ul class="list-main">
+                            <li>Bandwidth selection: CCT optimal</li>
+                            <li>Border county pairs</li>
+                            <li>Multiple cutoff analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- References Section -->
+        <footer class="references">
+            <h3>Key References</h3>
+            <div class="grid-2">
+                <ul class="list-main">
+                    <li>Card and Krueger (1994) - "Minimum Wages and Employment"</li>
+                    <li>Callaway and Sant'Anna (2021) - "Difference-in-Differences with Multiple Time Periods"</li>
+                    <li>Abadie et al. (2010) - "Synthetic Control Methods"</li>
+                </ul>
+                <ul class="list-main">
+                    <li>Sun and Abraham (2021) - "Dynamic Treatment Effects"</li>
+                    <li>Derenoncourt and Montialoux (2021) - "Minimum Wages and Racial Inequality"</li>
+                    <li>Dell (2010) - "The Persistent Effects of Peru's Mining Mita"</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="methodology.js"></script>
+</body>
+</html>

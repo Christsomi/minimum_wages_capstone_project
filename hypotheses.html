@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Minimum Wage Impact Hypotheses</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="hypotheses.css">
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Youth Minimum Wage Hypotheses</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Exploring Competing Perspectives on Minimum Wage Impacts</p>
+        </header>
+
+        <div class="category-selector mb-8">
+            <div class="flex justify-center space-x-4 mb-6">
+                <button data-category="all" class="category-btn active">All Variables</button>
+                <button data-category="labor-market" class="category-btn">Labor Market</button>
+                <button data-category="employment" class="category-btn">Employment</button>
+                <button data-category="job-dynamics" class="category-btn">Job Dynamics</button>
+                <button data-category="education" class="category-btn">Education</button>
+            </div>
+        </div>
+
+        <div id="hypotheses-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="hypothesis-card" data-category="labor-market">
+                <h2 class="card-title">Labor Force Participation Rate</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will decrease youth labor force participation by creating higher entry barriers</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will increase youth labor force participation by making work more attractive and financially viable</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="labor-market">
+                <h2 class="card-title">Employment/Population Ratio</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Higher minimum wages will reduce the employment/population ratio for youth due to increased hiring selectivity</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Higher minimum wages will improve the employment/population ratio by incentivizing more youth to seek and maintain employment</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="labor-market">
+                <h2 class="card-title">Unemployment Rate</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will elevate youth unemployment rates by reducing available entry-level positions</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will decrease youth unemployment by improving job quality and worker retention</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="employment">
+                <h2 class="card-title">Beginning of Quarter Employment: Counts</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will decrease beginning of quarter employment counts for youth</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will stabilize or slightly increase beginning of quarter employment counts</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="employment">
+                <h2 class="card-title">Hires All: Counts</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will significantly reduce total hire counts for young workers</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will maintain or slightly increase hire counts by attracting more committed workers</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="employment">
+                <h2 class="card-title">Separations: Counts</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will reduce job separations due to increased job value and worker commitment</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will increase job separations as employers become more demanding and selective</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="job-dynamics">
+                <h2 class="card-title">Turnover (Stable)</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will decrease job turnover by making existing jobs more valuable</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will increase job turnover as workers seek better-paying opportunities</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="job-dynamics">
+                <h2 class="card-title">Firm Job Gains: Counts</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will reduce job creation, particularly in youth-intensive sectors</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will stimulate job gains by improving worker productivity and business efficiency</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="job-dynamics">
+                <h2 class="card-title">Firm Job Loss: Counts</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will increase job losses for less productive young workers</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will reduce job losses by creating more stable employment environments</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="job-dynamics">
+                <h2 class="card-title">Firm Job Change: Net Change</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will result in a negative net job change for youth employment</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will create a neutral or slightly positive net job change</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="job-dynamics">
+                <h2 class="card-title">Full Quarter Employment: Average Monthly Earnings</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will moderately increase average monthly earnings for stable youth employment</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases will have minimal impact on average monthly earnings due to reduced hours or employment</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="education">
+                <h2 class="card-title">High School Dropout Rates</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will reduce high school dropout rates by decreasing economic pressure to work</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases might increase dropout rates by making immediate work more financially attractive</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="education">
+                <h2 class="card-title">High School Attendance</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will improve high school attendance by reducing economic distractions</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases might negatively impact high school attendance by creating more appealing work opportunities</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="education">
+                <h2 class="card-title">High School Enrollment Rates</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will boost high school enrollment rates by making education more financially strategic</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases might slightly decrease high school enrollment rates by making immediate work more lucrative</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="education">
+                <h2 class="card-title">College Enrollment Rates</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will encourage higher college enrollment by highlighting the value of advanced education</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases might reduce college enrollment by making immediate work more financially appealing</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hypothesis-card" data-category="education">
+                <h2 class="card-title">High School Graduation Rates</h2>
+                <ul class="hypothesis-list">
+                    <li>
+                        <strong>Hypothesis</strong>
+                        <p>Minimum wage increases will improve high school graduation rates by reducing economic pressures</p>
+                    </li>
+                    <li>
+                        <strong>Contradictory Hypothesis</strong>
+                        <p>Minimum wage increases might marginally impact graduation rates due to competing economic incentives</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="hypotheses.js"></script>
+</body>
+</html>

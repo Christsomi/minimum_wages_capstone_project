@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor Statistics Graph</title>
+    <link rel="stylesheet" href="leu.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Labor Statistics Graph</h1>
+        <div id="error-message" class="error" style="display:none;"></div>
+        <div class="control-section">
+            <h2>Select Variables to Graph:</h2>
+            <div class="graph-buttons">
+                <button data-var="total" class="graph-var-btn active">Total</button>
+                <button data-var="laborForceRate" class="graph-var-btn">Labor Force Rate</button>
+                <button data-var="employmentRatio" class="graph-var-btn">Employment Ratio</button>
+                <button data-var="unemploymentRate" class="graph-var-btn">Unemployment Rate</button>
+            </div>
+            <p class="hint">Click buttons to toggle variables on/off</p>
+        </div>
+        <div class="data-card">
+            <h2 id="graph-title">State Labor Statistics</h2>
+            <canvas id="labor-chart"></canvas>
+        </div>
+        <div class="table-actions">
+            <button id="back-btn" class="back-btn">Back to Tables</button>
+            <button id="download-csv-btn" class="download-btn">Download CSV</button>
+            <button id="download-png-btn" class="download-btn">Download PNG</button>
+        </div>
+    </div>
+    <script src="graph.js"></script>
+</body>
+</html>

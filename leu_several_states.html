@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-State Labor Statistics Comparison</title>
+    <link rel="stylesheet" href="leu_several_states.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Multi-State Labor Statistics Comparison (2010-2019)</h1>
+        
+        <div id="loading" class="loading-indicator">Loading data...</div>
+
+        <div id="error-message" class="error" style="display:none;"></div>
+
+        <div class="control-section">
+            <h2>Select Age Group:</h2>
+            <div class="age-buttons">
+                <button data-age="16-19" class="age-btn active">Ages 16-19</button>
+                <button data-age="20-24" class="age-btn">Ages 20-24</button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h2>Select Variable to Compare:</h2>
+            <div class="variable-buttons">
+                <button data-var="Total Population" class="var-btn">Total Population</button>
+                <button data-var="Labor Force Rate" class="var-btn">Labor Force Rate</button>
+                <button data-var="Employment Ratio" class="var-btn">Employment Ratio</button>
+                <button data-var="Unemployment Rate" class="var-btn">Unemployment Rate</button>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h2>Select States to Compare:</h2>
+            <div id="state-buttons" class="state-buttons"></div>
+            <p class="hint">Select any number of states for tables, up to 10 states for graphs</p>
+        </div>
+
+        <div class="view-controls">
+            <button id="show-table-btn" class="view-btn active">Show Table</button>
+            <button id="show-graph-btn" class="view-btn">Show Graph</button>
+        </div>
+
+        <div class="action-buttons">
+            <button id="download-csv-btn" class="download-btn">Download CSV</button>
+            <button id="download-png-btn" class="download-btn" style="display:none;">Download PNG</button>
+        </div>
+
+        <div id="data-container" class="data-container"></div>
+        
+        <div id="graph-container" class="graph-container" style="display:none;">
+            <div class="data-card" style="height: 800px;">
+                <canvas id="comparison-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="leu_several_states.js"></script>
+</body>
+</html>
