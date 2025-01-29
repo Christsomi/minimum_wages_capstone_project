@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Minimum Wage Comparison</title>
+    <link rel="stylesheet" href="minimum_wages.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">State Minimum Wage Comparison (2010-2019)</h1>
+        
+        <div id="loading" class="loading-indicator">Loading data...</div>
+
+        <div id="error-message" class="error" style="display:none;"></div>
+
+        <div class="control-section">
+            <h2>Select States to Compare:</h2>
+            <div class="select-buttons">
+                <button id="select-all-btn" class="select-btn">Select All States</button>
+                <button id="clear-all-btn" class="select-btn">Clear Selection</button>
+            </div>
+            <div id="state-buttons" class="state-buttons"></div>
+            <p class="hint">Select any number of states for tables, up to 10 states for graphs</p>
+        </div>
+
+        <div class="view-controls">
+            <button id="show-table-btn" class="view-btn active">Show Table</button>
+            <button id="show-graph-btn" class="view-btn">Show Graph</button>
+        </div>
+
+        <div class="action-buttons">
+            <button id="download-csv-btn" class="download-btn">Download CSV</button>
+            <button id="download-png-btn" class="download-btn" style="display:none;">Download PNG</button>
+            <button id="back-btn" class="back-btn">Back</button>
+        </div>
+
+        <div id="data-container" class="data-container"></div>
+        
+        <div id="graph-container" class="graph-container" style="display:none;">
+            <div class="data-card">
+                <canvas id="comparison-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="minimum_wages.js"></script>
+</body>
+</html>
