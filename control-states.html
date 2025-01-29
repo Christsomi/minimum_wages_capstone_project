@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Wage Research Analysis</title>
+    <link rel="stylesheet" href="control-states.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Minimum Wage Impact Analysis (2010-2019)</h1>
+            <p class="subtitle">Youth Employment and Education Research</p>
+        </header>
+
+        <div class="research-overview">
+            <div class="methodology-card">
+                <h2>Research Structure</h2>
+                <div class="state-categories">
+                    <div class="category treatment">
+                        <h3>Treatment States</h3>
+                        <p>States with significant minimum wage changes during study period</p>
+                        <div class="state-count" id="treatment-count">0</div>
+                    </div>
+                    <div class="category control">
+                        <h3>Control States</h3>
+                        <p>States with minimal/no minimum wage changes</p>
+                        <div class="state-count" id="control-count">0</div>
+                    </div>
+                    <div class="category excluded">
+                        <h3>Excluded States</h3>
+                        <p>States excluded due to confounding factors</p>
+                        <div class="state-count" id="excluded-count">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <div class="controls">
+                <div class="control-group">
+                    <h3>View Options</h3>
+                    <div class="button-group">
+                        <button class="active" data-view="all">All States</button>
+                        <button data-view="control">Control States</button>
+                        <button data-view="excluded">Excluded States</button>
+                        <button data-view="treatment">Treatment States</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h3>Analysis Period</h3>
+                    <div class="button-group">
+                        <button class="active" data-period="full">Full Period</button>
+                        <button data-period="pre">Pre-Treatment</button>
+                        <button data-period="post">Post-Treatment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-container">
+                <div class="chart-wrapper">
+                    <canvas id="wage-trends"></canvas>
+                </div>
+                <div class="data-grid" id="state-grid"></div>
+            </div>
+        </div>
+
+        <div class="methodology-section">
+            <h2>Research Methodology</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <h3>Traditional DiD</h3>
+                    <p>Two-period difference-in-differences analysis following Card and Krueger (1994)</p>
+                </div>
+                <div class="method-card">
+                    <h3>Staggered DiD</h3>
+                    <p>Multiple-period analysis accounting for treatment timing variations</p>
+                </div>
+                <div class="method-card">
+                    <h3>Synthetic Control</h3>
+                    <p>Creating synthetic control groups for comparison</p>
+                </div>
+                <div class="method-card">
+                    <h3>Event Study</h3>
+                    <p>Analysis of dynamic treatment effects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="control-states.js"></script>
+</body>
+</html>
